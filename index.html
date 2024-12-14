@@ -1,18 +1,126 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f3f4f6;
+    }
 
+    .calculator {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+    }
+
+    #screen {
+      height: 60px;
+      background: #222;
+      color: #fff;
+      text-align: right;
+      padding: 10px;
+      font-size: 2rem;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      overflow: hidden;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      padding: 10px;
+    }
+
+    button {
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 4px;
+      padding: 15px;
+      background-color: #f0f0f0;
+      color: #222;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #e0e0e0;
+    }
+
+    button:active {
+      background-color: #d0d0d0;
+    }
+
+    button#results {
+      background-color: #0078d4;
+      color: white;
+    }
+
+    button#results:hover {
+      background-color: #005a9e;
+    }
+
+    button#cbutton {
+      background-color: #d9534f;
+      color: white;
+    }
+
+    button#cbutton:hover {
+      background-color: #c9302c;
+    }
+
+    .row-span {
+      grid-column: span 2;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
 <body>
-    <p id="screen2"></p>
+  <div class="calculator">
     <p id="screen">0</p>
-    <script src="./script.js">
-    
-    </script>
-<button id="plus" onclick="operationPlus()">+</button>
-<button id="btn2" onclick="numCall(2)">2</button>
-<button id="btn2" onclick="numCall(3)">3</button>
-<button id="results" onclick="resultsButton()">=</button>
-<button id="dot" onclick="dot()">.</button>
+    <div class="buttons">
+      <button id="cbutton" onclick="cButton()">C</button>
+      <button id="div" onclick="operationDiv()">/</button>
+      <button id="mult" onclick="operationMult()">X</button>
+      <button id="less" onclick="operationLess()">-</button>
 
+      <button id="btn7" onclick="numCall(7)">7</button>
+      <button id="btn8" onclick="numCall(8)">8</button>
+      <button id="btn9" onclick="numCall(9)">9</button>
+      <button id="plus" onclick="operationPlus()">+</button>
 
+      <button id="btn4" onclick="numCall(4)">4</button>
+      <button id="btn5" onclick="numCall(5)">5</button>
+      <button id="btn6" onclick="numCall(6)">6</button>
+      <button id="dot" onclick="dot()">.</button>
+
+      <button id="btn1" onclick="numCall(1)">1</button>
+      <button id="btn2" onclick="numCall(2)">2</button>
+      <button id="btn3" onclick="numCall(3)">3</button>
+      <button id="btn0" class="row-span" onclick="numCall(0)">0</button>
+
+      <button id="results" onclick="resultsButton()">=</button>
+    </div>
+  </div>
+  <p class="message">Obs.: to make a new calc you need to press 'C' button</p>
+  <script src="./script.js"></script>
 </body>
-
 </html>
